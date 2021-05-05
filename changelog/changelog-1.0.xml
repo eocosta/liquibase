@@ -12,7 +12,30 @@
       );
     </sql>
     <rollback>
-      drop table novoschema;
+      drop table novoschema.teste1;
+    </rollback>
+  </changeSet>
+  <changeSet author="erica" id="3">
+    <sql splitStatements="true" stripComments="true">
+      create table if not exists novoschema.teste2 (
+        id bigserial,
+        content text
+      );
+    </sql>
+    <rollback>
+      drop table novoschema.teste2;
+    </rollback>
+  </changeSet>
+  <changeSet author="erica" id="4">
+    <comment>id = 4</comment>
+    <sql splitStatements="true" stripComments="true">
+      create table if not exists novoschema.teste2 (
+        id bigserial,
+        content text
+      );
+    </sql>
+    <rollback>
+      drop table novoschema.teste2;
     </rollback>
   </changeSet>
 </databaseChangeLog>
