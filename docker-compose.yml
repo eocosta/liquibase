@@ -13,8 +13,14 @@ services:
     networks:
       - pgsql
     restart: always
-
   
+  dbdoc:
+    image: nginx
+    ports:
+      - 1000:80
+    volumes:
+      - /Users/ericacosta/Documents/DITIC/liquibase/changelogDocs:/usr/share/nginx/html
+    restart: always  
 
 networks:
   pgsql:
